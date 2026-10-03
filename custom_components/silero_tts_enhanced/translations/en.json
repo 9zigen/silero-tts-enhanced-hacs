@@ -2,33 +2,69 @@
   "config": {
     "step": {
       "user": {
-        "title": "Installing Silero TTS",
+        "title": "Connect to the Silero add-on",
+        "description": "Address of the Silero TTS Enhanced Engine add-on and the default language.",
         "data": {
-          "host": "Server URL (Add-ons) (e.g. http://192.168.1.114:8014)",
-          "language": "Language",
+          "host": "Server URL (add-on)",
+          "language": "Language"
+        },
+        "data_description": {
+          "host": "For example http://homeassistant.local:8014"
+        }
+      },
+      "model": {
+        "title": "Model",
+        "description": "Models offered by the add-on for this language. You can also type another model id.",
+        "data": {
           "model_id": "Model version",
-          "speaker": "Voice (aidar, baya, xenia, etc.)",
-          "sample_rate": "Sampling rate",
-          "put_accent": "Auto-accent placement",
-          "put_yo": "Auto-placement of the letter Ё"
+          "sample_rate": "Sampling rate (Hz)"
+        }
+      },
+      "voice": {
+        "title": "Voice",
+        "data": {
+          "speaker": "Voice"
         }
       }
+    },
+    "error": {
+      "cannot_connect": "Cannot connect to the add-on. Check the address and that the add-on is running."
     }
   },
   "options": {
     "step": {
       "init": {
-        "title": "Changing Silero TTS settings",
+        "title": "Silero TTS settings",
+        "description": "Address of the Silero TTS Enhanced Engine add-on and the default language.",
         "data": {
-          "host": "Server URL (Add-ons) (e.g. http://192.168.1.114:8014)",
-          "language": "Default language",
-          "model_id": "Default model version",
-          "speaker": "Default voice",
-          "sample_rate": "Sampling rate (Hz)",
-          "put_accent": "Auto-accent placement",
-          "put_yo": "Auto-placement of the letter Ё"
+          "host": "Server URL (add-on)",
+          "language": "Default language"
+        },
+        "data_description": {
+          "host": "For example http://homeassistant.local:8014"
         }
+      },
+      "model": {
+        "title": "Model",
+        "description": "Models offered by the add-on for this language. You can also type another model id.",
+        "data": {
+          "model_id": "Default model version",
+          "sample_rate": "Sampling rate (Hz)"
+        }
+      },
+      "voice": {
+        "title": "Voice",
+        "data": {
+          "speaker": "Default voice",
+          "put_accent": "Auto-accent placement",
+          "put_yo": "Auto-placement of the letter Ё",
+          "send_wav": "Send WAV directly (skips conversion in Home Assistant)"
+        },
+        "description": "Turn on \"Send WAV directly\" if your speaker plays WAV: it saves the audio conversion Home Assistant otherwise does for every phrase."
       }
+    },
+    "error": {
+      "cannot_connect": "Cannot connect to the add-on. Check the address and that the add-on is running."
     }
   }
 }
